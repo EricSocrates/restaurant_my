@@ -174,7 +174,7 @@ public class AdminServlet extends HttpServlet {
         }
     }
 
-    //用户注册
+    //用户更新
     protected void updateAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Integer id = Integer.parseInt(request.getParameter("id"));
@@ -198,7 +198,7 @@ public class AdminServlet extends HttpServlet {
         out.close();
     }
 
-    //验证码是否通过
+    //登录
     protected void queryAdminByUsernameAndPwd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String username = request.getParameter("username");

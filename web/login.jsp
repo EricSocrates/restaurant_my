@@ -114,16 +114,13 @@
             }
 
             function login(){
-                $.post("admin?method=queryAdminByUsernameAndPwd", $("#loginForm").serialize(), function(data_p){
-                    //后台发来的是JSON字符串
-                    //console.log(JSON.parse(data_p));
-                    //parse解析之后才是我们需要的JSON对象
-                    let data = JSON.parse(data_p);
+                $.post("admin?method=queryAdminByUsernameAndPwd", $("#loginForm").serialize(), function(data){
+                    console.log(data);
                     if(data.msg == "success"){
                         alert("尊敬的" + data.username + "，欢迎回来！");
                         location.href = "index.jsp";
                     }else alert("用户名或密码错误，请重试！");
-                })
+                },"json");
             }
         </script>
     </body>
